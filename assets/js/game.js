@@ -1,0 +1,1 @@
+window.alert("This is an alert! JacaScript is running!");
