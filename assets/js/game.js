@@ -12,7 +12,7 @@ var playerMoney = 10;
 console.log(playerName, playerAttack, playerHealth);
 
 var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
-var enemyHealth = 50;
+var enemyHealth = 10;
 var enemyAttack = 12;
 
 
@@ -72,6 +72,8 @@ var fight = function(enemyName) {
 };
 
 for(var i = 0; i < enemyNames.length; i++) {
+    var pickedEnemyName = enemyNames[i];
+    enemyHealth = 10;
     // debugger;
-    fight(enemyNames[i]);
+    fight(pickedEnemyName);
 }
