@@ -11,7 +11,7 @@ var randomNumber = function(min, max) {
 }
 
 var fight = function(enemy) {
-    console.log(enemy);
+    console.log("Opponent: " + enemy.name, "\nHealth: " + enemy.health);
     //repeat and execute as long as the enemy-robot is  alive
     while(playerInfo.health > 0 && enemy.health > 0) {
         //ask player if they'd like to fight or run
@@ -103,7 +103,7 @@ var playerInfo = {
     }
 }
 
-console.log(playerInfo);
+console.log("Name: " + playerInfo.name, "\nHealth: " + playerInfo.health, "\nMoney: " + playerInfo.money);
 
 var enemyInfo = [
     {
