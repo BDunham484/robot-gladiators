@@ -15,10 +15,10 @@ var fightOrSkip = function() {
     var promptFight = window.prompt('Would you like to FIGHT or SKIP this battle? Enter "FIGHT" or "SKIP" to choose.');
   
     // Conditional Recursive Function Call
-if (promptFight === "" || promptFight === null) {
-    window.alert("You need to provide a valid answer! Please try again.");
-    return fightOrSkip();
-  }
+    if (promptFight === "" || promptFight === null) {
+        window.alert("You need to provide a valid answer! Please try again.");
+        return fightOrSkip();
+    }
   
     // if player picks "skip" confirm and then stop the loop
     if (promptFight === "skip" || promptFight === "SKIP") {
@@ -30,8 +30,8 @@ if (promptFight === "" || promptFight === null) {
         window.alert(playerInfo.name + " has decided to skip this fight. Goodbye!");
         // subtract money from playerMoney for skipping
         playerInfo.playerMoney = playerInfo.money - 10;
-        break;
-        // shop();
+        // break;
+        shop();
       }
     }
   }
