@@ -42,6 +42,13 @@ var fightOrSkip = function() {
 
 var fight = function(enemy) {
     console.log(enemy);
+
+    // keep track of who goes first
+    var isPlayerTurn = true;
+
+    if (Math.random() > 0.5) {
+        isPlayerTurn = false;
+    }
     //repeat and execute as long as the enemy-robot is  alive
     while(playerInfo.health > 0 && enemy.health > 0) {
         //ask player if they'd like to fight or skip using the fightOrSkip() function
@@ -49,7 +56,7 @@ var fight = function(enemy) {
             // if true, leave fight by breaking loop
             break;
         };
-        //generate random damge value based on player's attack power
+        //generate random damage value based on player's attack power
         var damage = randomNumber(playerInfo.attack - 3, playerInfo.attack);
         enemy.health = Math.max(0, enemy.health - damage);
 
