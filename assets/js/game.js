@@ -217,13 +217,28 @@ var startGame = function() {
     // startGame();
 };
 
+var highScore = function() {
+    var currentHighScore = localStorage.getItem("high-score");
+        currentHighScore = currentHighScore || 0;
+
+    if (currentHighScore >= playerInfo.money) {
+        window.alert("You did not get the High Score. \nCurrent High Score: " + currentHighScore + "\nYou're Score: " + playerInfo.money);
+    } else {
+        localStorage.setItem("high-score", playerInfo.money);
+        localStorage.setItem("name", playerInfo.name);
+        window.alert("Congrats! You set the new high score of " + playerInfo.money + "!")
+    }
+}
+
 // function to end the entire game
 var endGame = function() {
     // if player is still alive, player wins!
     if (playerInfo.health > 0) {
         window.alert("Great job, you've survived the game! You now have a score of " + playerInfo.money + ".");
+        highScore();
     } else {
         window.alert("You've lost your robot in battle.");
+        highScore();
     }
     // ask player if they'd like to play again
     var playAgainConfirm = window.confirm("Would you like to play again?");
